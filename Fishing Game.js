@@ -1,7 +1,7 @@
 
 var Godot = (() => {
   var _scriptName = typeof document != 'undefined' ? document.currentScript?.src : undefined;
-  
+
   return (
 function(moduleArg = {}) {
   var moduleRtn;
@@ -46,7 +46,7 @@ const Features = {
 	/**
 	 * Check whether the engine is running in a Secure Context.
 	 *
-	 * @returns {boolean} If the engine is running in a Secure Context.
+	 * @returns {boolean} If the enginrwtywry35ee is running in a Secure Context.
 	 * @function Engine.isSecureContext
 	 */
 	isSecureContext: function () {
