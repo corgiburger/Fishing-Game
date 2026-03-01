@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjju0is7nbigm"]
+
+[ext_resource type="Texture2D" uid="uid://drvhhx2gvfn57" path="res://assets/def_fishing_rod.png" id="1_ruflr"]
+[ext_resource type="Script" path="res://scripts/fishing_rod.gd" id="2_0pxww"]
+
+[node name="FishingRod" type="Sprite2D"]
+texture = ExtResource("1_ruflr")
+script = ExtResource("2_0pxww")
+
+[node name="RodEnd" type="Node2D" parent="."]
+position = Vector2(-4, -11)

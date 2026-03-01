@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://ls8f7tafteok"]
+
+[ext_resource type="Script" path="res://scripts/money.gd" id="1_n6v35"]
+
+[node name="Money" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_n6v35")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -78.0
+offset_right = 900.0
+offset_bottom = -3.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.545552, 1, 0.513852, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 50
+text = "$9999999"

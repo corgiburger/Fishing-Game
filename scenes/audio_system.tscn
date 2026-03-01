@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjkcp61t1j2la"]
+
+[ext_resource type="Script" path="res://scripts/audio_system.gd" id="1_8spv7"]
+
+[sub_resource type="Animation" id="Animation_203to"]
+resource_name = "pause"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_al701"]
+_data = {
+"pause": SubResource("Animation_203to")
+}
+
+[node name="AudioManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_8spv7")
+
+[node name="music_player" type="AudioStreamPlayer" parent="."]
+volume_db = 0.6
+bus = &"Music"
+
+[node name="sfx_player_1" type="AudioStreamPlayer" parent="."]
+volume_db = 0.627
+max_polyphony = 50
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_al701")
+}

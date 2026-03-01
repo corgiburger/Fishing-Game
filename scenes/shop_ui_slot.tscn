@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1n7xmfdjrs4g"]
+
+[ext_resource type="Script" path="res://scripts/shop_ui_slot.gd" id="1_0ybfn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5bq6"]
+bg_color = Color(0, 0, 0, 0.470588)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+
+[node name="shop_ui_slot" type="Panel"]
+z_index = 5
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+offset_right = 128.0
+offset_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5bq6")
+script = ExtResource("1_0ybfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+scale = Vector2(3, 3)
+centered = false
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://khex8jnhpn4c"
+path="res://.godot/imported/catch fish sfx.mp3-ac5b397498edc9fd26b121da8eed5c84.mp3str"
+
+[deps]
+
+source_file="res://sounds/sfx/catch fish sfx.mp3"
+dest_files=["res://.godot/imported/catch fish sfx.mp3-ac5b397498edc9fd26b121da8eed5c84.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

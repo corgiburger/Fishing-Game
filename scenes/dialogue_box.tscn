@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://eo6r11dquq4q"]
+
+[ext_resource type="FontFile" uid="uid://kg2w0sgacegs" path="res://assets/fonts/8bitoperator_jve.ttf" id="1_7qao1"]
+[ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="1_gwaff"]
+[ext_resource type="AudioStream" uid="uid://bm6d5lwedghiu" path="res://sounds/sfx/type sound.mp3" id="3_tc06r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1aiw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+
+[node name="DialogueBox" type="CanvasLayer"]
+script = ExtResource("1_gwaff")
+
+[node name="Control" type="Control" parent="."]
+z_index = 2999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -585.0
+offset_top = -385.0
+offset_right = 585.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q1aiw")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Asterix" type="RichTextLabel" parent="Control/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_7qao1")
+theme_override_font_sizes/bold_italics_font_size = 64
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "*"
+
+[node name="Text" type="RichTextLabel" parent="Control/PanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_7qao1")
+theme_override_font_sizes/bold_italics_font_size = 64
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="TypeSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_tc06r")
+max_polyphony = 1000
+bus = &"SFX"
+
+[node name="TypeTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.03

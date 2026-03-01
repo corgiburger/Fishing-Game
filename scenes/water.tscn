@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpbjfyaoiisp2"]
+
+[ext_resource type="Shader" path="res://scripts/water.gdshader" id="1_72ouk"]
+[ext_resource type="Texture2D" uid="uid://bknh7ot71x1sb" path="res://assets/ocean.png" id="1_pq4eg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lat0"]
+size = Vector2(378, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grso3"]
+shader = ExtResource("1_72ouk")
+shader_parameter/amplitude_px = 2.0
+shader_parameter/period = 2.2
+shader_parameter/travel_speed_cols = 96.0
+shader_parameter/wrap_vertical = false
+shader_parameter/highlight_strength = 0.08
+shader_parameter/highlight_width_cols = 6.0
+shader_parameter/highlight_speed_cols = 120.0
+
+[node name="Water" type="Area2D" groups=["Water"]]
+z_index = 5
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-29, 0)
+shape = SubResource("RectangleShape2D_2lat0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.540262, 0.861886, 0.960313, 1)
+material = SubResource("ShaderMaterial_grso3")
+position = Vector2(-29.5, 0)
+scale = Vector2(1.18438, 1)
+texture = ExtResource("1_pq4eg")
