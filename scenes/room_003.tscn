@@ -1,0 +1,184 @@
+[gd_scene load_steps=19 format=3 uid="uid://cg652oriqnjos"]
+
+[ext_resource type="Script" path="res://scripts/room_003.gd" id="1_b4pgm"]
+[ext_resource type="PackedScene" uid="uid://d12ujr0a6k86i" path="res://scenes/background.tscn" id="1_j74qp"]
+[ext_resource type="PackedScene" uid="uid://ls8f7tafteok" path="res://scenes/money.tscn" id="2_7q51u"]
+[ext_resource type="PackedScene" uid="uid://bk57pfwypy8yf" path="res://scenes/pause_menu.tscn" id="3_yx8wl"]
+[ext_resource type="PackedScene" uid="uid://dh3nm0d4givrx" path="res://scenes/sand.tscn" id="5_kmqj2"]
+[ext_resource type="PackedScene" uid="uid://cejwqi7wgoau8" path="res://scenes/fishing_dock.tscn" id="5_pttha"]
+[ext_resource type="PackedScene" uid="uid://dpbjfyaoiisp2" path="res://scenes/water.tscn" id="6_0q3mw"]
+[ext_resource type="Texture2D" uid="uid://cmdn4b3a1kr1v" path="res://assets/xibi.png" id="8_p8w2e"]
+
+[sub_resource type="Animation" id="Animation_puy1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l44ix"]
+resource_name = "enter"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r01wy"]
+resource_name = "exit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_scene"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ta5vd"]
+_data = {
+"RESET": SubResource("Animation_puy1k"),
+"enter": SubResource("Animation_l44ix"),
+"exit": SubResource("Animation_r01wy")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp6gf"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43ibd"]
+size = Vector2(16, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twnqf"]
+size = Vector2(8, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgia6"]
+size = Vector2(44, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8pgc"]
+size = Vector2(20, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nlir"]
+size = Vector2(66, 47)
+
+[node name="room_003" type="Node2D"]
+script = ExtResource("1_b4pgm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+
+[node name="Background" parent="." instance=ExtResource("1_j74qp")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ta5vd")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Money" parent="CanvasLayer" instance=ExtResource("2_7q51u")]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_yx8wl")]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fp6gf")
+
+[node name="FishingDock" parent="." instance=ExtResource("5_pttha")]
+position = Vector2(178, 42)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Sand" parent="." instance=ExtResource("5_kmqj2")]
+position = Vector2(0, 41)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Water" parent="." instance=ExtResource("6_0q3mw")]
+position = Vector2(0, 75)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="LoadingZone" type="Area2D" parent="Node2D"]
+position = Vector2(-187, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/LoadingZone"]
+shape = SubResource("RectangleShape2D_43ibd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(-187, -1)
+shape = SubResource("RectangleShape2D_twnqf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(-183, 29)
+shape = SubResource("RectangleShape2D_hgia6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(170, 12.5)
+shape = SubResource("RectangleShape2D_b8pgc")
+
+[node name="Npc" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Npc"]
+position = Vector2(0, -1.5)
+texture = ExtResource("8_p8w2e")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Npc"]
+visible = false
+shape = SubResource("RectangleShape2D_5nlir")
+
+[connection signal="body_entered" from="Node2D/LoadingZone" to="." method="_on_loading_zone_body_entered"]
+[connection signal="body_entered" from="Npc" to="." method="_on_npc_body_entered"]
+[connection signal="body_exited" from="Npc" to="." method="_on_npc_body_exited"]

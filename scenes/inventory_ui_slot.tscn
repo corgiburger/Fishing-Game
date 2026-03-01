@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ldstcdtsjqc3"]
+
+[ext_resource type="Script" path="res://scripts/inventory_ui_slot.gd" id="1_newjl"]
+[ext_resource type="Texture2D" uid="uid://bfyamtqpfsd4d" path="res://assets/inv_ui_slot.png" id="1_rud4h"]
+
+[node name="inventory_ui_slot" type="Panel"]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("1_newjl")
+
+[node name="Frame" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("1_rud4h")
+centered = false
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+z_index = 66
+position = Vector2(16, 16)
+scale = Vector2(3, 3)
+centered = false
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cejwqi7wgoau8"]
+
+[ext_resource type="Texture2D" uid="uid://ehc7eqxmhjp7" path="res://assets/fishing dock.png" id="1_ehtis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4brq"]
+size = Vector2(264, 67)
+
+[node name="FishingDock" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ehtis")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(63, 14.5)
+shape = SubResource("RectangleShape2D_w4brq")

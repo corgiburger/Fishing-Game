@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d12ujr0a6k86i"]
+
+[ext_resource type="Texture2D" uid="uid://b2x1ct26rydyq" path="res://assets/snowysky.png" id="1_r80xk"]
+
+[node name="Background" type="Sprite2D"]
+z_index = -5
+texture = ExtResource("1_r80xk")

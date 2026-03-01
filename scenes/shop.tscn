@@ -1,0 +1,354 @@
+[gd_scene load_steps=10 format=3 uid="uid://biw6a43rwokhb"]
+
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_eiflg"]
+[ext_resource type="PackedScene" uid="uid://c1n7xmfdjrs4g" path="res://scenes/shop_ui_slot.tscn" id="2_u1gx4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmfu4"]
+bg_color = Color(0, 0, 0, 0.819608)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1dp1"]
+bg_color = Color(1, 1, 1, 0.101961)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr4qj"]
+bg_color = Color(0, 0, 0, 0.858824)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_smby6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(102, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5gq72"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.574349, 0.450625),
+"update": 0,
+"values": [Vector2(102, 20), Vector2(102, -600)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.133333, 0.5),
+"transitions": PackedFloat32Array(0.466517, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_baqwb"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.31864, 1),
+"update": 0,
+"values": [Vector2(102, -600), Vector2(102, 20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2p3iy"]
+_data = {
+"RESET": SubResource("Animation_smby6"),
+"close": SubResource("Animation_5gq72"),
+"open": SubResource("Animation_baqwb")
+}
+
+[node name="shop" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_eiflg")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -858.0
+offset_top = 20.0
+offset_right = 858.0
+offset_bottom = 605.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fmfu4")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[wave]SHOP"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.699653, 0.699653, 0.699653, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "(where you can only sell stuff)"
+fit_content = true
+
+[node name="Button" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_e1dp1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e1dp1")
+text = "leave"
+
+[node name="GridContainer" type="GridContainer" parent="Control/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 12
+
+[node name="shop_ui_slot" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 1
+
+[node name="shop_ui_slot2" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 2
+
+[node name="shop_ui_slot3" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 3
+
+[node name="shop_ui_slot4" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 4
+
+[node name="shop_ui_slot5" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 5
+
+[node name="shop_ui_slot6" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 6
+
+[node name="shop_ui_slot7" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 7
+
+[node name="shop_ui_slot8" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 8
+
+[node name="shop_ui_slot9" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 9
+
+[node name="shop_ui_slot10" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 10
+
+[node name="shop_ui_slot11" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 11
+
+[node name="shop_ui_slot12" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 12
+
+[node name="shop_ui_slot13" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 13
+
+[node name="shop_ui_slot14" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 14
+
+[node name="shop_ui_slot15" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 15
+
+[node name="shop_ui_slot16" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 16
+
+[node name="shop_ui_slot17" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 17
+
+[node name="shop_ui_slot18" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 18
+
+[node name="shop_ui_slot19" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 19
+
+[node name="shop_ui_slot20" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 20
+
+[node name="shop_ui_slot21" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 21
+
+[node name="shop_ui_slot22" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 22
+
+[node name="shop_ui_slot23" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 23
+
+[node name="shop_ui_slot24" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+layout_mode = 2
+slot_index = 24
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ItemName" type="RichTextLabel" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="ItemCost" type="RichTextLabel" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.513678, 1, 0.48175, 1)
+theme_override_font_sizes/normal_font_size = 45
+
+[node name="SellButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_e1dp1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e1dp1")
+disabled = true
+text = "Sell"
+
+[node name="SellEverything" type="Button" parent="Control/Panel"]
+custom_minimum_size = Vector2(475, 110)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 17.0
+offset_right = 475.0
+offset_bottom = 127.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_rr4qj")
+text = "Sell Everything"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2p3iy")
+}
+
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2/SellButton" to="." method="_on_sell_button_pressed"]
+[connection signal="pressed" from="Control/Panel/SellEverything" to="." method="_on_sell_everything_pressed"]

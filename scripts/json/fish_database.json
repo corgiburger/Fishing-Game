@@ -1,0 +1,261 @@
+[
+	{
+		"common_fish_001": {
+			"speed": 50,
+			"name": "a plastic bag",
+			"weight_range": [
+				0.2,
+				0.29
+			],
+			"stubbornness": 1,
+			"rarity": "Common",
+			"cost": 0.2,
+			"flavour_text": "Really useless.",
+			"image": "res://assets/items/plasticbag.png"
+		},
+		"common_fish_002": {
+			"speed": 50,
+			"name": "a pair of socks",
+			"weight_range": [
+				0.2,
+				0.3
+			],
+			"stubbornness": 1,
+			"rarity": "Common",
+			"cost": 2,
+			"flavour_text": "Such great quality!!!!!!!",
+			"image": "res://assets/items/socks.png"
+		},
+		"common_fish_003": {
+			"speed": 60,
+			"name": "a 50 cent coin",
+			"weight_range": [
+				0.2,
+				0.25
+			],
+			"stubbornness": 1,
+			"rarity": "Common",
+			"cost": 0.5,
+			"flavour_text": "you could buy 1/3 of a potato cake with this",
+			"image": "res://assets/items/50cents.png"
+		},
+		"common_fish_004": {
+			"speed": 75,
+			"name": "an empty soda can",
+			"weight_range": [
+				0.2,
+				0.5
+			],
+			"stubbornness": 1,
+			"rarity": "Common",
+			"cost": 0.2,
+			"flavour_text": "yummy",
+			"image": "res://assets/items/crushed_cola_can.png"
+		}
+	},
+	{
+		"uncommon_fish_001": {
+			"speed": 60,
+			"name": "a rubber duck.",
+			"weight_range": [
+				0.3,
+				0.7
+			],
+			"rarity": "Uncommon",
+			"stubbornness": 1,
+			"cost": 5,
+			"flavour_text": "squeak",
+			"image": "res://assets/items/rubber duck.png"
+		},
+		"uncommon_fish_002": {
+			"speed": 60,
+			"name": "some broken sunglasses",
+			"weight_range": [
+				0.3,
+				0.5
+			],
+			"stubbornness": 1,
+			"rarity": "Uncommon",
+			"cost": 4,
+			"flavour_text": "maybe use turboflex sunglasses next time 🤪🤣",
+			"image": "res://assets/items/broken_sunglasses.png"
+		}
+	},
+	{
+		"rare_fish_001": {
+			"speed": 75,
+			"name": "a VHS tape",
+			"weight_range": [
+				1,
+				3
+			],
+			"stubbornness": 1,
+			"rarity": "Rare",
+			"cost": 15,
+			"flavour_text": "Looks cool.",
+			"image": "res://assets/items/vhs tape.png"
+		},
+		"rare_fish_002": {
+			"speed": 70,
+			"name": "a toaster",
+			"weight_range": [
+				2,
+				4
+			],
+			"stubbornness": 1,
+			"rarity": "Rare",
+			"cost": 45,
+			"flavour_text": "toa4st er",
+			"image": "res://assets/items/toaster.png"
+		},
+		"rare_fish_003": {
+			"speed": 70,
+			"name": "a chicken burger",
+			"weight_range": [
+				1,
+				3.2
+			],
+			"stubbornness": 1,
+			"rarity": "Rare",
+			"cost": 31,
+			"flavour_text": "The xibi special!!!",
+			"image": "res://assets/items/chicken burger.png"
+		},
+		"rare_fish_004": {
+			"speed": 20,
+			"name": "a brick",
+			"weight_range": [
+				2,
+				2.32
+			],
+			"stubbornness": 5,
+			"rarity": "Rare",
+			"cost": 40,
+			"flavour_text": "brick",
+			"image": "res://assets/items/brick.png"
+		}
+	},
+	{
+		"epic_fish_001": {
+			"speed": 200,
+			"name": "The Extremely Agile Glass Of Water",
+			"weight_range": [
+				1,
+				1.5
+			],
+			"stubbornness": 1,
+			"rarity": "Epic",
+			"cost": 150,
+			"flavour_text": "It's an extremely agile glass of water.",
+			"image": "res://assets/items/extremelyagileglassofwater.png"
+		},
+		"epic_fish_002": {
+			"speed": 95,
+			"name": "a bottle of ethanol named Ethan",
+			"weight_range": [
+				40,
+				45
+			],
+			"stubbornness": 1,
+			"rarity": "Epic",
+			"cost": 175,
+			"flavour_text": "Hi! I'm Ethan!",
+			"image": "res://assets/items/ETHANOL.png"
+		},
+		"epic_fish_003": {
+			"speed": 87,
+			"name": "Rick the hedgehog",
+			"weight_range": [
+				1,
+				1.5
+			],
+			"stubbornness": 2,
+			"rarity": "Epic",
+			"cost": 200,
+			"flavour_text": "*hedgehog noises*",
+			"image": "res://assets/items/RICK the hedgegod.png"
+		},
+		"epic_fish_004": {
+			"speed": 75,
+			"name": "Wyatt the Wizard",
+			"weight_range": [
+				68,
+				68
+			],
+			"stubbornness": 4,
+			"rarity": "Epic",
+			"cost": 0,
+			"flavour_text": "if you see this, the game is bugged",
+			"image": "res://assets/items/wyatt the wizard.png"
+		}
+	},
+	{ 
+		"legendary_fish_001": {
+			"speed": 110,
+			"name": "A Golden Toilet Seat",
+			"weight_range": [
+				1.5,
+				5
+			],
+			"stubbornness": 2,
+			"rarity": "Legendary",
+			"cost": 450,
+			"flavour_text": "It glimmers in your eyesight.",
+			"image": "res://assets/items/golden_toilet_seat.png"
+		},
+		"legendary_fish_002": {
+			"speed": 115,
+			"name": "cool stationary",
+			"weight_range": [
+				1.5,
+				20
+			],
+			"stubbornness": 2,
+			"rarity": "Legendary",
+			"cost": 500,
+			"flavour_text": "Looks like someone named Dom Z would really appreciate this.",
+			"image": "res://assets/items/stationary.png"
+		}
+	},
+	{
+		"mythical_fish_001": {
+			"speed": 120,
+			"name": "A Glowing Rubber duck",
+			"weight_range": [
+				5,
+				400
+			],
+			"stubbornness": 3,
+			"rarity": "Mythical",
+			"cost": 1350,
+			"flavour_text": "Really REALLY useless.",
+			"image": "res://assets/items/glowing_rubber_duck.png"
+		},
+		"mythical_fish_002": {
+			"speed": 140,
+			"name": "Michael",
+			"weight_range": [
+				50,
+				90
+			],
+			"stubbornness": 2,
+			"rarity": "Mythical",
+			"cost": 2000,
+			"flavour_text": "SOMEONE HELP ME",
+			"image": "res://assets/items/michael.png"
+		},
+		"mythical_fish_003": {
+			"speed": 10,
+			"name": "Heavenly Brick",
+			"weight_range": [
+				500,
+				900
+			],
+			"stubbornness": 10,
+			"rarity": "Mythical",
+			"cost": 3000,
+			"flavour_text": "A brick sits quietly, small and ordinary, yet it carries the weight of centuries in its rough, warm surface. Baked by fire and shaped by careful hands, it holds the memory of heat, dust, and time, waiting to become part of something greater than itself. In a wall, it becomes strength; in a path, it becomes guidance; in a ruin, it becomes a whisper of stories long past. Though simple in form, a brick is a promise of shelter, endurance, and human intention, stacked again and again until it turns empty space into meaning.",
+			"image": "res://assets/items/heavenlybrick.png"
+		}
+	}
+]

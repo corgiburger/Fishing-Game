@@ -1,0 +1,272 @@
+[gd_scene load_steps=23 format=3 uid="uid://uiifx3bp34ec"]
+
+[ext_resource type="PackedScene" uid="uid://cejwqi7wgoau8" path="res://scenes/fishing_dock.tscn" id="1_2nily"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="1_15mce"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_yw1hu"]
+[ext_resource type="PackedScene" uid="uid://c0lapsmxk0rpu" path="res://scenes/player.tscn" id="2_wyjam"]
+[ext_resource type="PackedScene" uid="uid://dpbjfyaoiisp2" path="res://scenes/water.tscn" id="4_3ahbe"]
+[ext_resource type="PackedScene" uid="uid://d12ujr0a6k86i" path="res://scenes/background.tscn" id="5_mskej"]
+[ext_resource type="PackedScene" uid="uid://ls8f7tafteok" path="res://scenes/money.tscn" id="7_c57w6"]
+[ext_resource type="Texture2D" uid="uid://u0sqe23qgowq" path="res://assets/shop sign.png" id="7_kys0n"]
+[ext_resource type="PackedScene" uid="uid://b6vyybvm03b6f" path="res://scenes/level_gui.tscn" id="8_4ft6w"]
+[ext_resource type="PackedScene" uid="uid://bk57pfwypy8yf" path="res://scenes/pause_menu.tscn" id="9_0mf08"]
+
+[sub_resource type="Animation" id="Animation_j2kio"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jnp14"]
+resource_name = "catch_fish_zoom_effect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 0.210224, 0.210224),
+"update": 0,
+"values": [Vector2(7, 7), Vector2(6.5, 6.5), Vector2(7, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 0.210224, 0.210224),
+"update": 0,
+"values": [Vector2(-50, 7), Vector2(-50, 0), Vector2(-50, 7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w4b8m"]
+_data = {
+"RESET": SubResource("Animation_j2kio"),
+"catch_fish_zoom_effect": SubResource("Animation_jnp14")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_007cr"]
+size = Vector2(32, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0gyo"]
+size = Vector2(20, 48)
+
+[sub_resource type="Animation" id="Animation_s2xie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qfbvb"]
+resource_name = "fade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_5rq4f"]
+resource_name = "fade_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"switch_scenes"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u7xk0"]
+_data = {
+"RESET": SubResource("Animation_s2xie"),
+"fade": SubResource("Animation_qfbvb"),
+"fade_in": SubResource("Animation_5rq4f")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lyrow"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87i71"]
+size = Vector2(20, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3k26"]
+size = Vector2(20, 58)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yw1hu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+script = ExtResource("1_15mce")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+"": SubResource("AnimationLibrary_w4b8m")
+}
+
+[node name="FishingDock" parent="." instance=ExtResource("1_2nily")]
+position = Vector2(32, 42)
+
+[node name="Player" parent="." instance=ExtResource("2_wyjam")]
+position = Vector2(147, 5)
+
+[node name="FishingZone" type="Area2D" parent="." groups=["fishingzone"]]
+unique_name_in_owner = true
+position = Vector2(-30, 13)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishingZone"]
+position = Vector2(6, -15)
+shape = SubResource("RectangleShape2D_007cr")
+
+[node name="Water" parent="." instance=ExtResource("4_3ahbe")]
+position = Vector2(0, 75)
+
+[node name="Background" parent="." instance=ExtResource("5_mskej")]
+
+[node name="Background" parent="Background" instance=ExtResource("5_mskej")]
+position = Vector2(-320, 0)
+
+[node name="ShopSign" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(130, -25)
+texture = ExtResource("7_kys0n")
+
+[node name="ShakeButtons" type="Node" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="ShakeButtons"]
+unique_name_in_owner = true
+wait_time = 2.0
+
+[node name="SafetyPrecaution" type="StaticBody2D" parent="."]
+position = Vector2(-51, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafetyPrecaution"]
+shape = SubResource("RectangleShape2D_l0gyo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u7xk0")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+modulate = Color(0, 0, 0, 1)
+z_index = 4096
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lyrow")
+
+[node name="Money" parent="CanvasLayer" instance=ExtResource("7_c57w6")]
+
+[node name="level_gui" parent="CanvasLayer" instance=ExtResource("8_4ft6w")]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_0mf08")]
+
+[node name="Door" type="Area2D" parent="."]
+position = Vector2(183, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+shape = SubResource("RectangleShape2D_87i71")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody2D"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_f3k26")
+
+[connection signal="caught_fish" from="Player" to="Camera2D" method="_on_player_caught_fish"]
+[connection signal="entered_fz" from="Player" to="Camera2D" method="_on_player_entered_fz"]
+[connection signal="exited_fz" from="Player" to="Camera2D" method="_on_player_exited_fz"]
+[connection signal="timeout" from="ShakeButtons/SpawnTimer" to="Player" method="_on_spawn_timer_timeout"]
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
