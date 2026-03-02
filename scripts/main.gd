@@ -12,8 +12,8 @@ func _ready() -> void:
 	player.get_child(3).position = Vector2(-13, 1)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
+	$CanvasLayer/Control/VBoxContainer/Streak.text = "[right][color=orange]Streak: " + str(Global.catch_streak)
+	$CanvasLayer/Control/VBoxContainer/Multiplier.text = "[right]XP mult: " + str(Global.xp_mult) + "x"
 
 func _on_door_body_entered(body: Player) -> void:
 	if body.is_in_group("player"):

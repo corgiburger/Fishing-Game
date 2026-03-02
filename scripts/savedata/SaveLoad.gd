@@ -17,7 +17,8 @@ func _save():
 		"xp_needed_to_level_up" : SaveFileData.xp_needed_to_level_up,
 		"has_done_quest" : SaveFileData.has_done_quest,
 		"has_caught_wyatt" : SaveFileData.has_caught_wyatt,
-		"luck_upgrade" : SaveFileData.luck_upgrade
+		"luck_upgrade" : SaveFileData.luck_upgrade,
+		"catch_streak" : SaveFileData.catch_streak
 		
 	}
 	var json_ver = JSON.stringify(data_to_save)
@@ -40,6 +41,7 @@ func _load():
 		SaveFileData.has_done_quest = data.get("has_done_quest", false)
 		SaveFileData.has_caught_wyatt = data.get("has_caught_wyatt", false)
 		SaveFileData.luck_upgrade = data.get("luck_upgrade", 0)
+		SaveFileData.catch_streak = data.get("catch_streak", 0)
 
 func _reset_save_data():
 	SaveFileData = SaveDataResource.new()

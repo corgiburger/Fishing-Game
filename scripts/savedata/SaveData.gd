@@ -12,3 +12,5 @@ class_name SaveDataResource
 
 @export var has_caught_wyatt : bool = false
 @export var luck_upgrade : int = 0
+
+@export var catch_streak : float = 0

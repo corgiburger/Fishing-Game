@@ -187,7 +187,7 @@ func win_fish():
 	anim.play("pickup_fish")
 	shake_spawn_timer.stop()
 	is_in_fish_minigame = false
-	
+	Global.catch_streak += 1
 	
 
 func get_rid_of_line():   #idk
@@ -238,22 +238,23 @@ func _on_fish_won(fish_weight, fish_name, current_rar, current_fish):
 	else:
 		GlobalInvResourse.add_item(current_fish)
 	print(GlobalInvResourse.inventory_items)
-	SaveLoad.SaveFileData.fishes = GlobalInvResourse.inventory_items
-	SaveLoad._save()
-	
 	match current_rar:
 		"Common":
-			Global.add_xp(randi_range(80, 180))
+			Global.add_xp(ceil(randi_range(80, 180) * Global.xp_mult))
 		"Uncommon":
-			Global.add_xp(randi_range(200, 400))
+			Global.add_xp(ceil(randi_range(200, 400) * Global.xp_mult))
 		"Rare":
-			Global.add_xp(randi_range(450, 700))
+			Global.add_xp(ceil(randi_range(500, 700) * Global.xp_mult))
 		"Epic":
-			Global.add_xp(randi_range(750, 1100))
+			Global.add_xp(ceil(randi_range(800, 1300) * Global.xp_mult))
 		"Legendary":
-			Global.add_xp(randi_range(1200, 1800))
+			Global.add_xp(ceil(randi_range(1500, 2000) * Global.xp_mult))
 		"Mythical":
-			Global.add_xp(randi_range(2000, 3000))
+			Global.add_xp(ceil(randi_range(2500, 4000) * Global.xp_mult))
+	
+	SaveLoad.SaveFileData.fishes = GlobalInvResourse.inventory_items
+	SaveLoad.SaveFileData.catch_streak = Global.catch_streak
+	SaveLoad._save()
 	
 func _on_fish_lost():
 	pickup_rod()

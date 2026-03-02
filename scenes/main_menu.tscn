@@ -416,14 +416,15 @@ layout_mode = 2
 theme_override_constants/outline_size = 9
 theme_override_fonts/normal_font = ExtResource("5_85sam")
 theme_override_font_sizes/normal_font_size = 48
-text = "Version Alpha 1.2
+text = "Version Alpha 1.21
+2/03/2026
 
 * Added lure upgrades which you can apply to your rod to get more lucky with catching fish
 * Added Wyatt the Wizard
 * Added \"Sell Everything\" Button To Shop
 * Fixed aspect ratio bug
 * Fixed bugs
-* Improved the virus that steals your bank account info :DD"
+* Added fish catch streak"
 fit_content = true
 
 [node name="HFlowContainer" type="HFlowContainer" parent="Control/PatchNotes/MarginContainer/VBoxContainer"]
@@ -445,14 +446,14 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mcnia")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mcnia")
 text = "Back"
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Version" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 12.0
 offset_right = 236.0
 offset_bottom = 46.0
 theme_override_font_sizes/font_size = 24
-text = "V Alpha 1.2"
+text = "V Alpha 1.21"
 
 [node name="Panel" type="Panel" parent="Control"]
 layout_mode = 1

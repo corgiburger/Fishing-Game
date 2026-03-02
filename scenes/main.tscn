@@ -247,6 +247,35 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lyrow")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -684.0
+offset_top = 30.0
+offset_right = -34.0
+offset_bottom = 110.0
+grow_horizontal = 0
+
+[node name="Streak" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(650, 70)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 44
+bbcode_enabled = true
+text = "[right]Current Catch Streak: 0"
+
+[node name="Multiplier" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[right]XP multiplier: 1.0x"
+
 [node name="Money" parent="CanvasLayer" instance=ExtResource("7_c57w6")]
 
 [node name="level_gui" parent="CanvasLayer" instance=ExtResource("8_4ft6w")]

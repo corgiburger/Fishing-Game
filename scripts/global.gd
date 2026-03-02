@@ -14,17 +14,24 @@ var has_caught_wyatt : bool = false
 
 var luck_upgrade : int = 0
 
+var catch_streak : float = 0
+var xp_mult : float
+
 var cool_setting : bool = false
+
 signal level_up
 signal xp_changed()
+
 func _ready() -> void:
 	SaveLoad._load()
 	load_data()
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(luck_upgrade)
+	xp_mult = (catch_streak/50) + 1
+	
 func add_xp(xp_to_add):
+	print(xp_to_add)
 	xp += xp_to_add
 	emit_signal("xp_changed", xp_to_add)
 	while xp >= xp_needed_to_level_up:
@@ -64,3 +71,4 @@ func load_data():
 	luck_upgrade = SaveLoad.SaveFileData.luck_upgrade
 	GlobalInvResourse.inventory_items = SaveLoad.SaveFileData.fishes
 	money = SaveLoad.SaveFileData.money
+	catch_streak = SaveLoad.SaveFileData.catch_streak

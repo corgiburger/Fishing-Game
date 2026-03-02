@@ -92,8 +92,8 @@ func _on_rod_area_entered(area: Area2D) -> void:
 		emit_signal("lost")
 		hasnt_hit_area_yet = false
 		fish_speed = 0
+		Global.catch_streak = 0
 		anim.play("end_mg")
-		
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("fish") and if_in_mg:
 		rod_speed = 0
