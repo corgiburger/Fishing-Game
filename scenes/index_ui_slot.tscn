@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm3vgxy7d1mb7"]
+
+[ext_resource type="Texture2D" uid="uid://bfyamtqpfsd4d" path="res://assets/inv_ui_slot.png" id="1_8ekni"]
+[ext_resource type="Script" path="res://scripts/index_ui_slot.gd" id="1_65ogv"]
+
+[node name="index_ui_slot" type="Panel"]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_65ogv")
+
+[node name="Frame" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("1_8ekni")
+centered = false
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+z_index = 66
+position = Vector2(16, 16)
+scale = Vector2(3, 3)
+centered = false
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
