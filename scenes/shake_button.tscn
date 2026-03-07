@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7ei1swpowads"]
 
-[ext_resource type="Script" path="res://scripts/shake_button.gd" id="1_g4ce6"]
-[ext_resource type="Texture2D" uid="uid://cc3d1mfmjhtqq" path="res://assets/shakebutton.png" id="1_r0ft7"]
+[ext_resource type="Script" path="res://scripts/shake_button.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cc3d1mfmjhtqq" path="res://assets/shakebutton.png" id="2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h07s7"]
 radius = 17.1172
@@ -108,11 +108,11 @@ _data = {
 [node name="ShakeButton" type="Area2D"]
 collision_layer = 32768
 collision_mask = 32768
-script = ExtResource("1_g4ce6")
+script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 50
-texture = ExtResource("1_r0ft7")
+texture = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h07s7")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://biw6a43rwokhb"]
 
-[ext_resource type="Script" path="res://scripts/shop.gd" id="1_eiflg"]
-[ext_resource type="PackedScene" uid="uid://c1n7xmfdjrs4g" path="res://scenes/shop_ui_slot.tscn" id="2_u1gx4"]
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://c1n7xmfdjrs4g" path="res://scenes/shop_ui_slot.tscn" id="2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmfu4"]
 bg_color = Color(0, 0, 0, 0.819608)
@@ -132,7 +132,7 @@ _data = {
 
 [node name="shop" type="CanvasLayer"]
 layer = 0
-script = ExtResource("1_eiflg")
+script = ExtResource("1")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -209,99 +209,99 @@ layout_mode = 2
 size_flags_horizontal = 3
 columns = 12
 
-[node name="shop_ui_slot" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 1
 
-[node name="shop_ui_slot2" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot2" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 2
 
-[node name="shop_ui_slot3" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot3" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 3
 
-[node name="shop_ui_slot4" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot4" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 4
 
-[node name="shop_ui_slot5" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot5" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 5
 
-[node name="shop_ui_slot6" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot6" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 6
 
-[node name="shop_ui_slot7" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot7" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 7
 
-[node name="shop_ui_slot8" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot8" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 8
 
-[node name="shop_ui_slot9" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot9" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 9
 
-[node name="shop_ui_slot10" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot10" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 10
 
-[node name="shop_ui_slot11" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot11" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 11
 
-[node name="shop_ui_slot12" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot12" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 12
 
-[node name="shop_ui_slot13" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot13" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 13
 
-[node name="shop_ui_slot14" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot14" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 14
 
-[node name="shop_ui_slot15" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot15" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 15
 
-[node name="shop_ui_slot16" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot16" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 16
 
-[node name="shop_ui_slot17" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot17" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 17
 
-[node name="shop_ui_slot18" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot18" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 18
 
-[node name="shop_ui_slot19" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot19" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 19
 
-[node name="shop_ui_slot20" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot20" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 20
 
-[node name="shop_ui_slot21" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot21" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 21
 
-[node name="shop_ui_slot22" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot22" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 22
 
-[node name="shop_ui_slot23" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot23" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 23
 
-[node name="shop_ui_slot24" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_u1gx4")]
+[node name="shop_ui_slot24" parent="Control/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 slot_index = 24
 

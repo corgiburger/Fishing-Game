@@ -1,13 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtm0ipog668bh"]
+[gd_scene load_steps=10 format=3 uid="uid://dtm0ipog668bh"]
 
-[ext_resource type="Texture2D" uid="uid://dt0m5djsaebb5" path="res://assets/9patch inv.png" id="1_15de4"]
-[ext_resource type="Script" path="res://scripts/inventory.gd" id="1_i4ank"]
-[ext_resource type="PackedScene" uid="uid://ldstcdtsjqc3" path="res://scenes/inventory_ui_slot.tscn" id="2_0icqb"]
-[ext_resource type="FontFile" uid="uid://kg2w0sgacegs" path="res://assets/fonts/8bitoperator_jve.ttf" id="3_xoqks"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://kg2w0sgacegs" path="res://assets/fonts/8bitoperator_jve.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://dt0m5djsaebb5" path="res://assets/9patch inv.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://ldstcdtsjqc3" path="res://scenes/inventory_ui_slot.tscn" id="4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq34r"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjuow"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drc6d"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tafae"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k7uf"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
 
 [node name="Inventory" type="CanvasLayer"]
 layer = 0
-script = ExtResource("1_i4ank")
+script = ExtResource("1")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -16,6 +56,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Switch Button" type="Button" parent="Control"]
+z_index = 5
+layout_mode = 1
+offset_left = 242.0
+offset_top = 874.0
+offset_right = 612.0
+offset_bottom = 961.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_pq34r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gjuow")
+theme_override_styles/hover = SubResource("StyleBoxFlat_drc6d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tafae")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0k7uf")
+text = "Index"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 layout_mode = 1
@@ -31,22 +87,23 @@ offset_bottom = -400.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(12, 12)
-texture = ExtResource("1_15de4")
+texture = ExtResource("3")
 region_rect = Rect2(0, 0, 16, 16)
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="Inventory" type="MarginContainer" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 241.0
 offset_top = 98.0
-offset_right = 1557.0
-offset_bottom = 763.0
+offset_right = -239.0
+offset_bottom = -251.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -54,138 +111,139 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Inventory"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Inventory/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="InventoryText" type="RichTextLabel" parent="Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="InventoryText" type="RichTextLabel" parent="Control/Inventory/HBoxContainer/VBoxContainer"]
 self_modulate = Color(0.482462, 0.259338, 0.0292141, 1)
 texture_filter = 2
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_xoqks")
+theme_override_fonts/normal_font = ExtResource("2")
 theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
-text = "INVENTORY"
+text = "Inventory"
 fit_content = true
 
-[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="Control/Inventory/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 columns = 6
 
-[node name="slot1" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot1" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 1
 
-[node name="slot2" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot2" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 2
 
-[node name="slot3" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot3" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 3
 
-[node name="slot4" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot4" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 4
 
-[node name="slot5" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot5" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 5
 
-[node name="slot6" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot6" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 6
 
-[node name="slot7" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot7" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 7
 
-[node name="slot8" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot8" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 8
 
-[node name="slot9" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot9" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 9
 
-[node name="slot10" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot10" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 10
 
-[node name="slot11" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot11" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 11
 
-[node name="slot12" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot12" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 12
 
-[node name="slot13" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot13" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 13
 
-[node name="slot14" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot14" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 14
 
-[node name="slot15" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot15" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 15
 
-[node name="slot16" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot16" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 16
 
-[node name="slot17" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot17" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 17
 
-[node name="slot18" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot18" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 18
 
-[node name="slot19" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot19" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 19
 
-[node name="slot20" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot20" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 20
 
-[node name="slot21" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot21" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 21
 
-[node name="slot22" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot22" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 22
 
-[node name="slot23" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot23" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 23
 
-[node name="slot24" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("2_0icqb")]
+[node name="slot24" parent="Control/Inventory/HBoxContainer/VBoxContainer/GridContainer" instance=ExtResource("4")]
 layout_mode = 2
 slot_index = 24
 
-[node name="LevelText" type="RichTextLabel" parent="Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="LevelText" type="RichTextLabel" parent="Control/Inventory/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 self_modulate = Color(0.482462, 0.259338, 0.0292141, 1)
 texture_filter = 2
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_xoqks")
+theme_override_fonts/normal_font = ExtResource("2")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "Level:"
 fit_content = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Inventory/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="FishName" type="RichTextLabel" parent="Control/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="FishName" type="RichTextLabel" parent="Control/Inventory/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(600, 67)
 layout_mode = 2
 theme_override_constants/outline_size = 8
@@ -193,7 +251,7 @@ theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 fit_content = true
 
-[node name="RarityText" type="RichTextLabel" parent="Control/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="RarityText" type="RichTextLabel" parent="Control/Inventory/HBoxContainer/VBoxContainer2"]
 clip_contents = false
 layout_mode = 2
 theme_override_constants/outline_size = 4
@@ -201,7 +259,7 @@ theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 fit_content = true
 
-[node name="WeightText" type="RichTextLabel" parent="Control/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="WeightText" type="RichTextLabel" parent="Control/Inventory/HBoxContainer/VBoxContainer2"]
 clip_contents = false
 layout_mode = 2
 theme_override_constants/outline_size = 4
@@ -209,19 +267,212 @@ theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 fit_content = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="Control/Inventory/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/Inventory/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 15
 
-[node name="FlavourText" type="RichTextLabel" parent="Control/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+[node name="FlavourText" type="RichTextLabel" parent="Control/Inventory/HBoxContainer/VBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(570, 120)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+
+[node name="Index" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 241.0
+offset_top = 98.0
+offset_right = -240.0
+offset_bottom = -236.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Index"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Index/HBoxContainer"]
+custom_minimum_size = Vector2(800, 715)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="IndexText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer"]
+self_modulate = Color(0.482462, 0.259338, 0.0292141, 1)
+texture_filter = 2
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "Index"
+fit_content = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Index/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CommonText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=whitesmoke]Common"
+fit_content = true
+
+[node name="CommonFish" type="GridContainer" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="UncommonText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=seagreen]Uncommon"
+fit_content = true
+
+[node name="UncommonFish" type="GridContainer" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="RareText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=skyblue]Rare"
+fit_content = true
+
+[node name="RareFish" type="GridContainer" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="EpicText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=mediumpurple]Epic"
+fit_content = true
+
+[node name="EpicFish" type="GridContainer" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="LegendaryText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=gold]Legendary"
+fit_content = true
+
+[node name="LegendaryFish" type="GridContainer" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="MythicalText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[rainbow sat=0.6]Mythical"
+fit_content = true
+
+[node name="MythicalFish" type="GridContainer" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="GlitchedText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[pulse freq=4.0 color=#000000 ease=2.0][rainbow][shake level=40 rate=5][wave]Glitched"
+fit_content = true
+
+[node name="GlithcedFish" type="GridContainer" parent="Control/Index/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+columns = 6
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Index/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="FishName" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(600, 67)
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+fit_content = true
+
+[node name="RarityText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer2"]
+clip_contents = false
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+fit_content = true
+
+[node name="AmountCaught" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer2"]
+clip_contents = false
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/Index/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Index/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="FlavourText" type="RichTextLabel" parent="Control/Index/HBoxContainer/VBoxContainer2/MarginContainer"]
 custom_minimum_size = Vector2(570, 200)
 layout_mode = 2
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
+
+[connection signal="pressed" from="Control/Switch Button" to="." method="_on_switch_button_pressed"]

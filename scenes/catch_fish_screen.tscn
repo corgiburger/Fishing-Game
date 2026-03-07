@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://clcnuqypasai5"]
 
-[ext_resource type="Texture2D" uid="uid://dbfci64476ubs" path="res://assets/glowing shine thingy circle.png" id="1_oq5no"]
-[ext_resource type="Script" path="res://scripts/catch_fish_screen.gd" id="1_qn4mn"]
-[ext_resource type="Texture2D" uid="uid://2cxq7ic4nruv" path="res://assets/fishpixelart.png" id="3_374ey"]
+[ext_resource type="Script" path="res://scripts/catch_fish_screen.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dbfci64476ubs" path="res://assets/glowing shine thingy circle.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://2cxq7ic4nruv" path="res://assets/fishpixelart.png" id="3"]
 
 [sub_resource type="Animation" id="Animation_inis0"]
 length = 0.001
@@ -203,7 +203,7 @@ _data = {
 bg_color = Color(0, 0, 0, 1)
 
 [node name="catch_fish_screen" type="Node2D"]
-script = ExtResource("1_qn4mn")
+script = ExtResource("1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -250,7 +250,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(500, 500)
 mouse_filter = 2
-texture = ExtResource("1_oq5no")
+texture = ExtResource("2")
 
 [node name="Fish" type="TextureRect" parent="CanvasLayer/Control"]
 modulate = Color(1, 1, 1, 0)
@@ -269,7 +269,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(92, 92)
 mouse_filter = 2
-texture = ExtResource("3_374ey")
+texture = ExtResource("3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 1

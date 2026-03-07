@@ -23,6 +23,7 @@ AudioManager="*res://scenes/audio_system.tscn"
 Global="*res://scripts/global.gd"
 SaveLoad="*res://scripts/savedata/SaveLoad.gd"
 DialogueManager="*res://scripts/DialogueManager.gd"
+FishDataManager="*res://scripts/fish_data_manager.gd"
 
 [display]
 

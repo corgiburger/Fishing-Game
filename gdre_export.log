@@ -1,0 +1,36 @@
+GDRE Tools v2.4.0
+Windows 10.0.26200, NVIDIA GeForce RTX 3080, vulkan
+Opening file: ~/\OneDrive\Documents\fishing-game\index.pck
+Loaded 122 imported files
+Detected Engine Version: 4.3.0
+Detected Bytecode Revision: 4.3.0-stable (77af6ca)
+Verified 251 files, no errors detected!
+Extracted 251 files, no errors detected!
+Saved project config.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     30
+Failed scripts:                         0
+Imported resources for export session:  122
+Successfully converted:                 122
+Lossy:                                  1
+Rewrote metadata:                       64
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.3.0 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+

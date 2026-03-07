@@ -1,15 +1,15 @@
 [gd_scene load_steps=23 format=3 uid="uid://uiifx3bp34ec"]
 
-[ext_resource type="PackedScene" uid="uid://cejwqi7wgoau8" path="res://scenes/fishing_dock.tscn" id="1_2nily"]
-[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="1_15mce"]
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_yw1hu"]
-[ext_resource type="PackedScene" uid="uid://c0lapsmxk0rpu" path="res://scenes/player.tscn" id="2_wyjam"]
-[ext_resource type="PackedScene" uid="uid://dpbjfyaoiisp2" path="res://scenes/water.tscn" id="4_3ahbe"]
-[ext_resource type="PackedScene" uid="uid://d12ujr0a6k86i" path="res://scenes/background.tscn" id="5_mskej"]
-[ext_resource type="PackedScene" uid="uid://ls8f7tafteok" path="res://scenes/money.tscn" id="7_c57w6"]
-[ext_resource type="Texture2D" uid="uid://u0sqe23qgowq" path="res://assets/shop sign.png" id="7_kys0n"]
-[ext_resource type="PackedScene" uid="uid://b6vyybvm03b6f" path="res://scenes/level_gui.tscn" id="8_4ft6w"]
-[ext_resource type="PackedScene" uid="uid://bk57pfwypy8yf" path="res://scenes/pause_menu.tscn" id="9_0mf08"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cejwqi7wgoau8" path="res://scenes/fishing_dock.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://c0lapsmxk0rpu" path="res://scenes/player.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://dpbjfyaoiisp2" path="res://scenes/water.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://d12ujr0a6k86i" path="res://scenes/background.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://u0sqe23qgowq" path="res://assets/shop sign.png" id="7"]
+[ext_resource type="PackedScene" uid="uid://ls8f7tafteok" path="res://scenes/money.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://b6vyybvm03b6f" path="res://scenes/level_gui.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://bk57pfwypy8yf" path="res://scenes/pause_menu.tscn" id="10"]
 
 [sub_resource type="Animation" id="Animation_j2kio"]
 length = 0.001
@@ -166,21 +166,21 @@ size = Vector2(20, 58)
 size = Vector2(20, 58)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_yw1hu")
+script = ExtResource("1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)
-script = ExtResource("1_15mce")
+script = ExtResource("2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 libraries = {
 "": SubResource("AnimationLibrary_w4b8m")
 }
 
-[node name="FishingDock" parent="." instance=ExtResource("1_2nily")]
+[node name="FishingDock" parent="." instance=ExtResource("3")]
 position = Vector2(32, 42)
 
-[node name="Player" parent="." instance=ExtResource("2_wyjam")]
+[node name="Player" parent="." instance=ExtResource("4")]
 position = Vector2(147, 5)
 
 [node name="FishingZone" type="Area2D" parent="." groups=["fishingzone"]]
@@ -192,18 +192,18 @@ collision_mask = 2
 position = Vector2(6, -15)
 shape = SubResource("RectangleShape2D_007cr")
 
-[node name="Water" parent="." instance=ExtResource("4_3ahbe")]
+[node name="Water" parent="." instance=ExtResource("5")]
 position = Vector2(0, 75)
 
-[node name="Background" parent="." instance=ExtResource("5_mskej")]
+[node name="Background" parent="." instance=ExtResource("6")]
 
-[node name="Background" parent="Background" instance=ExtResource("5_mskej")]
+[node name="Background" parent="Background" instance=ExtResource("6")]
 position = Vector2(-320, 0)
 
 [node name="ShopSign" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(130, -25)
-texture = ExtResource("7_kys0n")
+texture = ExtResource("7")
 
 [node name="ShakeButtons" type="Node" parent="."]
 
@@ -262,6 +262,7 @@ grow_horizontal = 0
 clip_contents = false
 custom_minimum_size = Vector2(650, 70)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/normal_font_size = 44
 bbcode_enabled = true
@@ -271,16 +272,17 @@ text = "[right]Current Catch Streak: 0"
 clip_contents = false
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/outline_size = 9
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[right]XP multiplier: 1.0x"
 
-[node name="Money" parent="CanvasLayer" instance=ExtResource("7_c57w6")]
+[node name="Money" parent="CanvasLayer" instance=ExtResource("8")]
 
-[node name="level_gui" parent="CanvasLayer" instance=ExtResource("8_4ft6w")]
+[node name="level_gui" parent="CanvasLayer" instance=ExtResource("9")]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_0mf08")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10")]
 
 [node name="Door" type="Area2D" parent="."]
 position = Vector2(183, 0)

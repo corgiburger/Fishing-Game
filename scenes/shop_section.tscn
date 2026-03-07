@@ -1,14 +1,14 @@
 [gd_scene load_steps=22 format=3 uid="uid://b2clc7hked2ig"]
 
-[ext_resource type="PackedScene" uid="uid://d12ujr0a6k86i" path="res://scenes/background.tscn" id="1_5dwc6"]
-[ext_resource type="Script" path="res://scripts/shop_section.gd" id="1_xvt10"]
-[ext_resource type="PackedScene" uid="uid://dpbjfyaoiisp2" path="res://scenes/water.tscn" id="3_xha0e"]
-[ext_resource type="PackedScene" uid="uid://cejwqi7wgoau8" path="res://scenes/fishing_dock.tscn" id="4_6g1s7"]
-[ext_resource type="PackedScene" uid="uid://bk57pfwypy8yf" path="res://scenes/pause_menu.tscn" id="4_quam8"]
-[ext_resource type="PackedScene" uid="uid://dh3nm0d4givrx" path="res://scenes/sand.tscn" id="6_iegir"]
-[ext_resource type="Texture2D" uid="uid://b4oypbrxur8jj" path="res://assets/shop_exterior.png" id="7_bt3rj"]
-[ext_resource type="PackedScene" uid="uid://ls8f7tafteok" path="res://scenes/money.tscn" id="7_rbbsb"]
-[ext_resource type="Texture2D" uid="uid://dr26eejdhkk25" path="res://assets/wyattfull.png" id="9_2ax4k"]
+[ext_resource type="Script" path="res://scripts/shop_section.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://d12ujr0a6k86i" path="res://scenes/background.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://ls8f7tafteok" path="res://scenes/money.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bk57pfwypy8yf" path="res://scenes/pause_menu.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://dpbjfyaoiisp2" path="res://scenes/water.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://cejwqi7wgoau8" path="res://scenes/fishing_dock.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://dh3nm0d4givrx" path="res://scenes/sand.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://b4oypbrxur8jj" path="res://assets/shop_exterior.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dr26eejdhkk25" path="res://assets/wyattfull.png" id="9"]
 
 [sub_resource type="Animation" id="Animation_m4y3n"]
 length = 0.001
@@ -103,12 +103,12 @@ size = Vector2(62, 45.5)
 size = Vector2(65, 44)
 
 [node name="shop_section" type="Node2D"]
-script = ExtResource("1_xvt10")
+script = ExtResource("1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)
 
-[node name="Background" parent="." instance=ExtResource("1_5dwc6")]
+[node name="Background" parent="." instance=ExtResource("2")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -117,7 +117,7 @@ libraries = {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Money" parent="CanvasLayer" instance=ExtResource("7_rbbsb")]
+[node name="Money" parent="CanvasLayer" instance=ExtResource("3")]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 z_index = 4096
@@ -141,12 +141,12 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6yrnt")
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_quam8")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4")]
 
-[node name="Water" parent="." instance=ExtResource("3_xha0e")]
+[node name="Water" parent="." instance=ExtResource("5")]
 position = Vector2(0, 75)
 
-[node name="FishingDock" parent="." instance=ExtResource("4_6g1s7")]
+[node name="FishingDock" parent="." instance=ExtResource("6")]
 position = Vector2(-178, 42)
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -177,7 +177,7 @@ shape = SubResource("RectangleShape2D_goi8e")
 position = Vector2(-182, -2.5)
 shape = SubResource("RectangleShape2D_wjmas")
 
-[node name="Sand" parent="." instance=ExtResource("6_iegir")]
+[node name="Sand" parent="." instance=ExtResource("7")]
 position = Vector2(0, 41)
 
 [node name="Shop" type="Area2D" parent="."]
@@ -185,7 +185,7 @@ z_index = -1
 position = Vector2(0, -9)
 
 [node name="Sprite2D" type="Sprite2D" parent="Shop"]
-texture = ExtResource("7_bt3rj")
+texture = ExtResource("8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shop"]
 position = Vector2(0, 9.25)
@@ -195,7 +195,7 @@ shape = SubResource("RectangleShape2D_nqpn3")
 position = Vector2(77, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wizard"]
-texture = ExtResource("9_2ax4k")
+texture = ExtResource("9")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wizard"]
 position = Vector2(-2.5, 0)

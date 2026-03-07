@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://beyrgu3cd6u34"]
 
-[ext_resource type="Texture2D" uid="uid://lhgiq81fagkg" path="res://assets/fishing rod without the rod.png" id="1_qoncv"]
-[ext_resource type="Script" path="res://scripts/fish_minigame.gd" id="1_vs31a"]
-[ext_resource type="Texture2D" uid="uid://2cxq7ic4nruv" path="res://assets/fishpixelart.png" id="3_qkkrt"]
+[ext_resource type="Script" path="res://scripts/fish_minigame.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://lhgiq81fagkg" path="res://assets/fishing rod without the rod.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://2cxq7ic4nruv" path="res://assets/fishpixelart.png" id="3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1qjn"]
 size = Vector2(13, 6)
@@ -169,7 +169,7 @@ corner_radius_bottom_left = 12
 size = Vector2(256, 9)
 
 [node name="FishMinigame" type="Node2D"]
-script = ExtResource("1_vs31a")
+script = ExtResource("1")
 
 [node name="Rod" type="Area2D" parent="."]
 z_index = 20
@@ -179,7 +179,7 @@ collision_mask = 128
 
 [node name="Sprite2D" type="Sprite2D" parent="Rod"]
 position = Vector2(0, -16)
-texture = ExtResource("1_qoncv")
+texture = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rod"]
 position = Vector2(-0.5, 28)
@@ -192,7 +192,7 @@ collision_layer = 128
 collision_mask = 128
 
 [node name="Sprite2D" type="Sprite2D" parent="Fish"]
-texture = ExtResource("3_qkkrt")
+texture = ExtResource("3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
 position = Vector2(1, -4)

@@ -51,6 +51,19 @@
 			"cost": 0.2,
 			"flavour_text": "yummy",
 			"image": "res://assets/items/crushed_cola_can.png"
+		},
+		"common_fish_005": {
+			"speed": 60,
+			"name": "a pencil",
+			"weight_range": [
+				0.2,
+				0.5
+			],
+			"stubbornness": 1,
+			"rarity": "Common",
+			"cost": 1,
+			"flavour_text": "This pencil rests in the quiet dignity of its own simplicity, an unassuming yet profoundly intentional instrument whose slender wooden body carries the faint, resinous scent of freshly shaved cedar and the subtle grooves left behind by the milling blades that shaped it into its precise hexagonal symmetry, each flat facet catching light differently so that even in stillness it seems gently dimensional, almost architectural in its construction, tapering with patient inevitability toward a sharpened graphite core that emerges like the dark heart of an idea made visible, fragile yet resolute.",
+			"image": "res://assets/items/pencil.png"
 		}
 	},
 	{
@@ -79,6 +92,32 @@
 			"cost": 4,
 			"flavour_text": "maybe use turboflex sunglasses next time 🤪🤣",
 			"image": "res://assets/items/broken_sunglasses.png"
+		},
+		"uncommon_fish_003": {
+			"speed": 65,
+			"name": "a fortune cookie",
+			"weight_range": [
+				0.3,
+				0.5
+			],
+			"stubbornness": 1,
+			"rarity": "Uncommon",
+			"cost": 5,
+			"flavour_text": "Hey, I'm a JOKEtune cookie! Ha! HAHA! What did one ocean say to the other ocean? Nothing, they just waved. AHDABDFHABH!!!!AGHAH HHahHHAHAHAHAHHA",
+			"image": "res://assets/items/fortune cookie.png"
+		},
+		"uncommon_fish_004": {
+			"speed": 75,
+			"name": "an egg",
+			"weight_range": [
+				0.3,
+				0.5
+			],
+			"stubbornness": 1,
+			"rarity": "Uncommon",
+			"cost": 7,
+			"flavour_text": "i love anime and i love japanese people and japan awgh~~",
+			"image": "res://assets/items/egg.png"
 		}
 	},
 	{
@@ -133,6 +172,19 @@
 			"cost": 40,
 			"flavour_text": "brick",
 			"image": "res://assets/items/brick.png"
+		},
+		"rare_fish_005": {
+			"speed": 130,
+			"name": "a squirrel in a suit",
+			"weight_range": [
+				0.2,
+				1
+			],
+			"stubbornness": 1,
+			"rarity": "Rare",
+			"cost": 80,
+			"flavour_text": "I'm a squirrel and I do NOT have $80 in my blazer pocket right now.",
+			"image": "res://assets/items/squirrel.png"
 		}
 	},
 	{
@@ -151,7 +203,7 @@
 		},
 		"epic_fish_002": {
 			"speed": 95,
-			"name": "a bottle of ethanol named Ethan",
+			"name": "a bottle of ethanol",
 			"weight_range": [
 				40,
 				45
@@ -159,7 +211,7 @@
 			"stubbornness": 1,
 			"rarity": "Epic",
 			"cost": 175,
-			"flavour_text": "Hi! I'm Ethan!",
+			"flavour_text": "It looks absolutely delicious.",
 			"image": "res://assets/items/ETHANOL.png"
 		},
 		"epic_fish_003": {
@@ -187,6 +239,19 @@
 			"cost": 0,
 			"flavour_text": "if you see this, the game is bugged",
 			"image": "res://assets/items/wyatt the wizard.png"
+		},
+		"epic_fish_005": {
+			"speed": 85,
+			"name": "a letter",
+			"weight_range": [
+				1,
+				2
+			],
+			"stubbornness": 2,
+			"rarity": "Epic",
+			"cost": 150,
+			"flavour_text": "Dear Fish,\nWhere are you. Actually. I have searched the whole ocean and there has not been ONE of your kind.\nFrom, another fish.",
+			"image": "res://assets/items/letter.png"
 		}
 	},
 	{ 
@@ -215,6 +280,19 @@
 			"cost": 500,
 			"flavour_text": "Looks like someone named Dom Z would really appreciate this.",
 			"image": "res://assets/items/stationary.png"
+		},
+		"legendary_fish_003": {
+			"speed": 130,
+			"name": "uranium",
+			"weight_range": [
+				1.5,
+				200
+			],
+			"stubbornness": 3,
+			"rarity": "Legendary",
+			"cost": 750,
+			"flavour_text": "It looks quite edible",
+			"image": "res://assets/items/uranium.png"
 		}
 	},
 	{
@@ -256,6 +334,21 @@
 			"cost": 3000,
 			"flavour_text": "A brick sits quietly, small and ordinary, yet it carries the weight of centuries in its rough, warm surface. Baked by fire and shaped by careful hands, it holds the memory of heat, dust, and time, waiting to become part of something greater than itself. In a wall, it becomes strength; in a path, it becomes guidance; in a ruin, it becomes a whisper of stories long past. Though simple in form, a brick is a promise of shelter, endurance, and human intention, stacked again and again until it turns empty space into meaning.",
 			"image": "res://assets/items/heavenlybrick.png"
+		}
+	},
+	{
+		"glitched_fish_001": {
+			"speed": 0,
+			"name": "an actual fish",
+			"weight_range": [
+				5,
+				400
+			],
+			"stubbornness": 3,
+			"rarity": "Glitched",
+			"cost": 135000,
+			"flavour_text": "Throughout the entire game so far, you haven't caught a single fish. Not one. Just a bunch of junk, rubber ducks, bricks, but no fish. Except this one. With a 0.05% chance, you finally caught the [color=yellow]actual[/color] fish.",
+			"image": "res://assets/items/an actual fish.png"
 		}
 	}
 ]

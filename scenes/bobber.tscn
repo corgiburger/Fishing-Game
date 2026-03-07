@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bx0tq5410e4rn"]
 
-[ext_resource type="Texture2D" uid="uid://crhf0tfvgcek5" path="res://assets/Sprite-0002.png" id="1_mxeco"]
-[ext_resource type="Script" path="res://scripts/bobber.gd" id="1_xl3w0"]
+[ext_resource type="Script" path="res://scripts/bobber.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://crhf0tfvgcek5" path="res://assets/Sprite-0002.png" id="2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8f7xy"]
 radius = 1.0
@@ -15,10 +15,10 @@ collision_layer = 4
 collision_mask = 8
 mass = 0.2
 gravity_scale = 0.4
-script = ExtResource("1_xl3w0")
+script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_mxeco")
+texture = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8f7xy")

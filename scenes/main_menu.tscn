@@ -1,17 +1,17 @@
 [gd_scene load_steps=20 format=3 uid="uid://crsngq58kov20"]
 
-[ext_resource type="Texture2D" uid="uid://b2x1ct26rydyq" path="res://assets/snowysky.png" id="1_6rf6b"]
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ol0jg"]
-[ext_resource type="Shader" path="res://scripts/water.gdshader" id="2_ay0dc"]
-[ext_resource type="Texture2D" uid="uid://bknh7ot71x1sb" path="res://assets/ocean.png" id="3_5wgba"]
-[ext_resource type="Texture2D" uid="uid://dusdhudp8afwk" path="res://assets/FISHING GAME logo_normal.png" id="3_wytng"]
-[ext_resource type="FontFile" uid="uid://kg2w0sgacegs" path="res://assets/fonts/8bitoperator_jve.ttf" id="5_85sam"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b2x1ct26rydyq" path="res://assets/snowysky.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dusdhudp8afwk" path="res://assets/FISHING GAME logo_normal.png" id="3"]
+[ext_resource type="Shader" path="res://scripts/water.gdshader" id="4"]
+[ext_resource type="Texture2D" uid="uid://bknh7ot71x1sb" path="res://assets/ocean.png" id="5"]
+[ext_resource type="FontFile" uid="uid://kg2w0sgacegs" path="res://assets/fonts/8bitoperator_jve.ttf" id="6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_if7sq"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cf1q8"]
-shader = ExtResource("2_ay0dc")
+shader = ExtResource("4")
 shader_parameter/amplitude_px = 2.0
 shader_parameter/period = 2.2
 shader_parameter/travel_speed_cols = 96.0
@@ -222,7 +222,7 @@ _data = {
 }
 
 [node name="MainMenu" type="CanvasLayer"]
-script = ExtResource("1_ol0jg")
+script = ExtResource("1")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -239,7 +239,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_6rf6b")
+texture = ExtResource("2")
 
 [node name="TitleHolder" type="Control" parent="Control"]
 custom_minimum_size = Vector2(960, 336)
@@ -255,7 +255,7 @@ grow_horizontal = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/TitleHolder"]
 scale = Vector2(6, 6)
-texture = ExtResource("3_wytng")
+texture = ExtResource("3")
 centered = false
 
 [node name="WaterHolder" type="Panel" parent="Control"]
@@ -278,7 +278,7 @@ self_modulate = Color(0.540262, 0.861886, 0.960313, 1)
 material = SubResource("ShaderMaterial_cf1q8")
 position = Vector2(-3, -11)
 scale = Vector2(6.06995, 5.125)
-texture = ExtResource("3_5wgba")
+texture = ExtResource("5")
 centered = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
@@ -300,7 +300,7 @@ theme_override_constants/separation = 15
 texture_filter = 1
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_85sam")
+theme_override_fonts/font = ExtResource("6")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxFlat_mcnia")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_mcnia")
@@ -314,7 +314,7 @@ text = "Start"
 texture_filter = 1
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_85sam")
+theme_override_fonts/font = ExtResource("6")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxFlat_mcnia")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_mcnia")
@@ -328,7 +328,7 @@ text = "Settings"
 texture_filter = 1
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_85sam")
+theme_override_fonts/font = ExtResource("6")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxFlat_mcnia")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_mcnia")
@@ -342,7 +342,7 @@ text = "Extra"
 texture_filter = 1
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_85sam")
+theme_override_fonts/font = ExtResource("6")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxFlat_mcnia")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_mcnia")
@@ -364,7 +364,7 @@ offset_top = 33.0
 offset_right = -39.0
 offset_bottom = 113.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("5_85sam")
+theme_override_fonts/font = ExtResource("6")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxFlat_mcnia")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_mcnia")
@@ -405,7 +405,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 theme_override_constants/outline_size = 8
-theme_override_fonts/normal_font = ExtResource("5_85sam")
+theme_override_fonts/normal_font = ExtResource("6")
 theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
 text = "New Content:"
@@ -414,15 +414,12 @@ fit_content = true
 [node name="PATCHNOTES" type="RichTextLabel" parent="Control/PatchNotes/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 9
-theme_override_fonts/normal_font = ExtResource("5_85sam")
+theme_override_fonts/normal_font = ExtResource("6")
 theme_override_font_sizes/normal_font_size = 48
-text = "Version Alpha 1.21
-2/03/2026
+text = "Version Alpha 1.3
+6/03/2026
 
-* Added lure upgrades which you can apply to your rod to get more lucky with catching fish
-* Added Wyatt the Wizard
-* Added \"Sell Everything\" Button To Shop
-* Fixed aspect ratio bug
+* Added an Index where you can see the fish you caught
 * Fixed bugs
 * Added fish catch streak"
 fit_content = true
@@ -436,7 +433,7 @@ texture_filter = 1
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_fonts/font = ExtResource("5_85sam")
+theme_override_fonts/font = ExtResource("6")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxFlat_mcnia")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_mcnia")
@@ -453,7 +450,7 @@ offset_top = 12.0
 offset_right = 236.0
 offset_bottom = 46.0
 theme_override_font_sizes/font_size = 24
-text = "V Alpha 1.21"
+text = "V Alpha 1.3"
 
 [node name="Panel" type="Panel" parent="Control"]
 layout_mode = 1

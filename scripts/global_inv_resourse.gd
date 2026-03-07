@@ -1,6 +1,6 @@
 extends Node
 
-var inventory_items : Array = []
+var inventory_items: Array = []
 
 
 
