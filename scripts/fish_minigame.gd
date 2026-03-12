@@ -123,7 +123,6 @@ func get_random_fish():
 	while current_fish["name"].to_lower() == "wyatt the wizard" and Global.has_caught_wyatt:
 		current_fish = fish_data[3].values()[randi_range(0, fish_data[3].values().size() - 1)]
 	
-	current_fish = fish_data[4].values()[3]
 	
 	fish_speed = current_fish["speed"]
 	stubbornness = current_fish["stubbornness"]
