@@ -293,6 +293,19 @@
 			"cost": 750,
 			"flavour_text": "It looks quite edible",
 			"image": "res://assets/items/uranium.png"
+		},
+		"legendary_fish_004": {
+			"speed": 115,
+			"name": "a bomb",
+			"weight_range": [
+				20,
+				30
+			],
+			"stubbornness": 1,
+			"rarity": "Legendary",
+			"cost": 0,
+			"flavour_text": "kaboom",
+			"image": "res://assets/items/bomb.png"
 		}
 	},
 	{
@@ -331,9 +344,22 @@
 			],
 			"stubbornness": 10,
 			"rarity": "Mythical",
-			"cost": 3000,
+			"cost": 2300,
 			"flavour_text": "A brick sits quietly, small and ordinary, yet it carries the weight of centuries in its rough, warm surface. Baked by fire and shaped by careful hands, it holds the memory of heat, dust, and time, waiting to become part of something greater than itself. In a wall, it becomes strength; in a path, it becomes guidance; in a ruin, it becomes a whisper of stories long past. Though simple in form, a brick is a promise of shelter, endurance, and human intention, stacked again and again until it turns empty space into meaning.",
 			"image": "res://assets/items/heavenlybrick.png"
+		},
+		"mythical_fish_004": {
+			"speed": 165,
+			"name": "a black hole in a jar",
+			"weight_range": [
+				80000000000000,
+				90000000000000
+			],
+			"stubbornness": 4,
+			"rarity": "Mythical",
+			"cost": 3000,
+			"flavour_text": "...",
+			"image": "res://assets/items/blackhole.png"
 		}
 	},
 	{

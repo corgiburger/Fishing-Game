@@ -4,4 +4,7 @@ extends Control
 
 
 func _process(delta: float) -> void :
-	text.text = "$" + str(Global.money)
+	if Global.money < 0:
+		text.text = "[color=red]$" + str(Global.money)
+	else:
+		text.text = "$" + str(Global.money)

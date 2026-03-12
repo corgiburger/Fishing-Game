@@ -29,8 +29,9 @@ var fish_rarities_by_upgrade: Dictionary = {
 	6: {"Common": 42, "Uncommon": 65, "Rare": 60, "Epic": 48, "Legendary": 35, "Mythical": 18}, 
 	7: {"Common": 35, "Uncommon": 60, "Rare": 60, "Epic": 52, "Legendary": 40, "Mythical": 22}, 
 	8: {"Common": 28, "Uncommon": 55, "Rare": 58, "Epic": 55, "Legendary": 45, "Mythical": 26}, 
-	9: {"Common": 22, "Uncommon": 50, "Rare": 55, "Epic": 55, "Legendary": 50, "Mythical": 30}, 
-	10: {"Common": 0, "Uncommon": 0, "Rare": 0, "Epic": 20, "Legendary": 30, "Mythical": 40}, 
+	9: {"Common": 24, "Uncommon": 52, "Rare": 56, "Epic": 55, "Legendary": 47, "Mythical": 28}, 
+	10: {"Common": 22, "Uncommon": 50, "Rare": 55, "Epic": 55, "Legendary": 50, "Mythical": 30},
+	11: {"Common": 0, "Uncommon": 0, "Rare": 0, "Epic": 0, "Legendary": 50, "Mythical": 30},
 }
 var fish_speed: float
 var stubbornness: float
@@ -118,10 +119,12 @@ func get_random_fish():
 			current_fish = fish_data[5].values()[randi_range(0, fish_data[5].values().size() - 1)]
 		"Glitched":
 			current_fish = fish_data[6].values()[0]
-
+	
 	while current_fish["name"].to_lower() == "wyatt the wizard" and Global.has_caught_wyatt:
 		current_fish = fish_data[3].values()[randi_range(0, fish_data[3].values().size() - 1)]
-
+	
+	current_fish = fish_data[4].values()[3]
+	
 	fish_speed = current_fish["speed"]
 	stubbornness = current_fish["stubbornness"]
 	fish_name = current_fish["name"]
@@ -145,7 +148,11 @@ func get_rarity():
 	fish_rarities = fish_rarities_by_upgrade[upgrade]
 	rng.randomize()
 	var weighted_sum: = 0
-
+	
+	var n = randi_range(1, 2000)
+	if n == 5:
+		return "Glitched"
+		
 	for i in fish_rarities:
 		weighted_sum += fish_rarities[i]
 	var number = rng.randi_range(0, weighted_sum)
@@ -155,7 +162,4 @@ func get_rarity():
 			return i
 		number -= fish_rarities[i]
 	
-	var n = randi_range(1, 2000)
-	if n == 5:
-		return "Glitched"
 		

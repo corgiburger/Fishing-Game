@@ -8,7 +8,7 @@ signal exited_fz
 
 const SHAKE_BUTTON = preload("res://scenes/shake_button.tscn")
 const BOBBER = preload("res://scenes/bobber.tscn")
-
+const EXPLOSION = preload("res://scenes/explosion.tscn")
 @onready var fishing_rod: Sprite2D = $FishingRod
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var anim: AnimationPlayer = $FishingRod/AnimationPlayer
@@ -242,6 +242,16 @@ func _on_fish_won(fish_weight, fish_name, current_rar, current_fish):
 			DialogueManager.add_next_dialogue("kenos zodiac acheron tartarus slaughterhouse 8o grief bloodlust bloodbath firework the golden limbo congregation")
 	else:
 		GlobalInvResourse.add_item(current_fish)
+		
+	if fish_name.to_lower() == "a bomb":
+		var explosioninstance = EXPLOSION.instantiate()
+		get_parent().add_child(explosioninstance)
+		Global.add_money(-1500)
+		AudioManager.play_sfx(load("res://sounds/sfx/explosion.wav"))
+		DialogueManager.start_dialogue("You lost [color=red]$1500[/color] because of the explosion!")
+		
+
+	
 	print(GlobalInvResourse.inventory_items)
 	match current_rar:
 		"Common":

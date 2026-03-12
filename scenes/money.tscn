@@ -26,4 +26,5 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(0.545552, 1, 0.513852, 1)
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
 text = "$9999999"

@@ -81,7 +81,10 @@ signal xp_changed()
 func _ready() -> void :
 	SaveLoad._load()
 	load_data()
-
+	if has_caught_wyatt:
+		index_data["wyatt the wizard"] = 1
+		SaveLoad.SaveFileData.index_data = index_data
+		SaveLoad._save()
 func _process(delta: float) -> void :
 	xp_mult = (catch_streak/50) + 1
 	xp_needed_to_level_up = xp_needed_based_on_level[level]
